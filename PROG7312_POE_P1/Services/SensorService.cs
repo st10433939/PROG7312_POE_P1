@@ -122,6 +122,22 @@ namespace PROG7312_POE_P1.Services
 
             _floatTelemetry.Add(packet);
 
+            // Added to AddTelemetry(int sensorId, TelemetryPacket<float> packet)
+            if (packet.Unit.Equals("pH", StringComparison.OrdinalIgnoreCase))
+            {
+                if (packet.Value < 5.5f || packet.Value > 6.5f)
+                {
+                    AddAlertInternal(sensor, "Critical", $"pH level out of range: {packet.Value} {packet.Unit} (Target: 5.5 - 6.5)");
+                }
+            }
+            else if (packet.Unit.Equals("°C", StringComparison.OrdinalIgnoreCase) && sensor.Category == SensorCategory.WaterQuality)
+            {
+                if (packet.Value > 24.0f)
+                {
+                    AddAlertInternal(sensor, "Warning", $"Water temperature too high: {packet.Value}°C (Risk of root rot)");
+                }
+            }
+
 
             if (packet.Value > 7)
             {
@@ -161,6 +177,11 @@ namespace PROG7312_POE_P1.Services
 
             _integerTelemetry.Add(packet);
 
+            // Added to AddTelemetry(int sensorId, TelemetryPacket<int> packet)
+            if (packet.Unit.Equals("mS/cm", StringComparison.OrdinalIgnoreCase) && packet.Value > 2500)
+            {
+                AddAlertInternal(sensor, "Warning", $"EC level high: {packet.Value} µS/cm");
+            }
 
             if (packet.Value > 1500)
             {
@@ -413,7 +434,7 @@ namespace PROG7312_POE_P1.Services
                     .Where(
                         sensor =>
                             sensor.Category ==
-                            SensorCategory.WaterSolution)
+                            SensorCategory.Actuator)
                     .Select(
                         sensor => sensor.DeviceId)
                     .ToHashSet(

@@ -360,12 +360,16 @@ a {
 ================================== */
 
 /* Displays the telemetry statistics
-   in a five-column grid. */
+   in a 4-column grid. */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 13px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
     margin-bottom: 22px;
+}
+
+.stats-grid .stat-card:first-child {
+    grid-column: 1 / -1;
 }
 
 /* Styles each individual statistics card. */

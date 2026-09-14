@@ -49,10 +49,13 @@ namespace PROG7312_POE_P1.Services
 
             if (string.IsNullOrWhiteSpace(node.Type))
             {
-                errors.Add(
-                    $"{currentPath} does not have a type.");
+                errors.Add($"{currentPath} does not have a hydroponic node type specified.");
             }
 
+            if (node.Type.Equals("Reservoir", StringComparison.OrdinalIgnoreCase) && !node.IsConfigured)
+            {
+                errors.Add($"{currentPath} (Reservoir) requires EC/pH calibration before deployment.");
+            }
 
             if (!node.IsConfigured)
             {

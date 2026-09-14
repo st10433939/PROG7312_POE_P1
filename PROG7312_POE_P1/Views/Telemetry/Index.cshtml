@@ -5,111 +5,45 @@
 
 <div class="telemetry-page">
 
-
     <!-- HEADER -->
 
     <section class="telemetry-header">
 
-
         <div>
 
-            <h1>
-                Sensor Data Ingestion
-                & Telemetry
-            </h1>
-
-
-            <p>
-                Register devices, submit strongly
-                typed telemetry and monitor the
-                Smart-X gateway.
-            </p>
+            <p class="eyebrow">HYDROPONIC SYSTEM MONITORING</p>
+            <h1>System Ingestion & Telemetry</h1>
+            <p>Monitor reservoir metrics, water quality sensors, environmental parameters, and dosing controls.</p>
 
         </div>
 
     </section>
-
-
 
     <!-- SUMMARY CARDS -->
-
     <section class="stats-grid">
-
-
         <div class="stat-card">
-
-            <span>
-                Registered Sensors
-            </span>
-
-            <strong id="sensorCount">
-                0
-            </strong>
-
+            <span>Total Active Sensors</span>
+            <strong id="sensorCount">0</strong>
         </div>
-
-
         <div class="stat-card">
-
-            <span>
-                Float Packets
-            </span>
-
-            <strong id="floatCount">
-                0
-            </strong>
-
+            <span>Water Quality Packets</span>
+            <strong id="floatCount">0</strong>
         </div>
-
-
         <div class="stat-card">
-
-            <span>
-                Integer Packets
-            </span>
-
-            <strong id="integerCount">
-                0
-            </strong>
-
+            <span>Nutrient / Flow Packets</span>
+            <strong id="integerCount">0</strong>
         </div>
-
-
         <div class="stat-card">
-
-            <span>
-                Boolean Packets
-            </span>
-
-            <strong id="booleanCount">
-                0
-            </strong>
-
+            <span>Actuator Controls</span>
+            <strong id="booleanCount">0</strong>
         </div>
-
-
         <div class="stat-card">
-
-            <span>
-                Combined Power
-            </span>
-
-            <strong>
-                <span id="powerLoad">
-                    0
-                </span>
-                W
-            </strong>
-
+            <span>Pump & Light Load</span>
+            <strong><span id="powerLoad">0</span> W</strong>
         </div>
-
-
     </section>
 
-
-
     <div class="dashboard-layout">
-
 
         <!-- LEFT SIDE -->
 
@@ -130,13 +64,12 @@
                         </p>
 
                         <h2>
-                            Register Sensor
+                            Register Hydro Sensor
                         </h2>
 
                     </div>
 
                 </div>
-
 
                 <form id="sensorForm"
                       class="smart-form">
@@ -154,7 +87,7 @@
 
                         <input id="deviceId"
                                type="text"
-                               placeholder="Enter unique Id"
+                               placeholder="HYDRO-PH-01"
                                required />
 
                     </div>
@@ -164,14 +97,14 @@
 
                         <label for="location">
 
-                            Deployment Location
+                            Location / Subsystem
 
                         </label>
 
 
                         <input id="location"
                                type="text"
-                               placeholder="Enter location"
+                               placeholder="Grow Room A - Reservoir 1"
                                required />
 
                     </div>
@@ -189,17 +122,10 @@
                         <select id="category"
                                 required>
 
-                            <option value="Environmental">
-                                Environmental
-                            </option>
-
-                            <option value="WaterSolution">
-                                Water Solution
-                            </option>
-
-                            <option value="Actuator">
-                                Actuator
-                            </option>
+                            <option value="WaterQuality">Water Quality (pH/EC/Temp)</option>
+                            <option value="Nutrients">Nutrient / Water Level</option>
+                            <option value="Environmental">Room Environment (VPD/Temp/RH)</option>
+                            <option value="Actuator">Actuator (Pump/Valve/Lights)</option>
 
                         </select>
 
@@ -285,17 +211,9 @@
 
                             <select id="telemetryType">
 
-                                <option value="float">
-                                    Float
-                                </option>
-
-                                <option value="int">
-                                    Integer
-                                </option>
-
-                                <option value="bool">
-                                    Boolean
-                                </option>
+                                <option value="float">Float (pH / Temp / DO)</option>
+                                <option value="int">Integer (EC / Flow Rate / Watts)</option>
+                                <option value="bool">Boolean (Pump State / Valve)</option>
 
                             </select>
 
@@ -310,12 +228,8 @@
 
                             </label>
 
-
-                            <input id="telemetryValue"
-                                   type="text"
-                                   placeholder="Enter value"
-                                   required />
-
+                            <input id="telemetryValue" type="text" placeholder="6.2" required />
+                            
                         </div>
 
 
@@ -330,10 +244,7 @@
 
                         </label>
 
-
-                        <input id="telemetryUnit"
-                               type="text"
-                               placeholder="Enter unit" />
+                        <input id="telemetryUnit" type="text" placeholder="pH, °C, mS/cm, L/min" />
 
                     </div>
 
@@ -346,7 +257,6 @@
                     </button>
 
                 </form>
-
 
                 <div id="telemetryMessage"
                      class="message-box">
@@ -438,8 +348,6 @@
 
 
         </div>
-
-
 
         <!-- RIGHT SIDE -->
 
@@ -580,7 +488,7 @@
                     <div>
 
                         <p class="eyebrow">
-                            ADVANCED C#
+                            ADVANCED DATA
                         </p>
 
                         <h2>

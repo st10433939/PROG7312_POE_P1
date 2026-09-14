@@ -844,58 +844,26 @@ async function simulateBatch() {
 
 async function validateDeploymentTree() {
 
-    const deploymentTree = {
-
-        name:
-            "Facility A",
-
-        type:
-            "Facility",
-
-        isConfigured:
-            true,
-
+    const hydroponicDeploymentTree = {
+        name: "Main Facility",
+        type: "Facility",
+        isConfigured: true,
         children: [
-
             {
-
-                name:
-                    "Zone 1",
-
-                type:
-                    "Zone",
-
-                isConfigured:
-                    true,
-
+                name: "Grow Room 1",
+                type: "Room",
+                isConfigured: true,
                 children: [
-
                     {
-
-                        name:
-                            "Sub-Zone B",
-
-                        type:
-                            "Sub-Zone",
-
-                        isConfigured:
-                            true,
-
+                        name: "NFT Loop A",
+                        type: "GrowingChannel",
+                        isConfigured: true,
                         children: [
-
                             {
-
-                                name:
-                                    "Sensor Node 01",
-
-                                type:
-                                    "Node",
-
-                                isConfigured:
-                                    true,
-
-                                children:
-                                    []
+                                name: "Main Reservoir",
+                                type: "Reservoir",
+                                isConfigured: true,
+                                children: []
                             }
                         ]
                     }
@@ -919,7 +887,7 @@ async function validateDeploymentTree() {
 
                 body:
                     JSON.stringify(
-                        deploymentTree)
+                        hydroponicDeploymentTree)
             });
 
 
@@ -931,7 +899,7 @@ async function validateDeploymentTree() {
 
         showMessage(
             "advancedMessage",
-            "Deployment tree passed recursive validation.",
+            "Hydroponic topology successfully validated.",
             "success");
 
     }
@@ -1113,23 +1081,21 @@ function updateTelemetryPlaceholder() {
             .getElementById(
                 "telemetryValue");
 
+    const unitInput =
+        document
+            .getElementById(
+                "telemetryUnit");
+
 
     if (type === "float") {
-
-        input.placeholder =
-            "24.5";
-
-    }
-    else if (type === "int") {
-
-        input.placeholder =
-            "1250";
-
-    }
-    else {
-
-        input.placeholder =
-            "true or false";
+        input.placeholder = "6.1";
+        unitInput.placeholder = "pH";
+    } else if (type === "int") {
+        input.placeholder = "1400";
+        unitInput.placeholder = "µS/cm";
+    } else {
+        input.placeholder = "true or false";
+        unitInput.placeholder = "ON/OFF";
     }
 }
 
