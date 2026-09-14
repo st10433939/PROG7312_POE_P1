@@ -22,7 +22,7 @@ html {
    including the dark background, text colour and font family. */
 body {
     min-height: 100vh;
-    background: #070b14;
+    background: #e3e4e6;
     color: #e8edf6;
     font-family: Inter, Arial, Helvetica, sans-serif;
     line-height: 1.5;
@@ -85,23 +85,6 @@ a {
     margin-right: auto;
 }
 
-/* Styles the square Smart-X icon
-   shown alongside the application name. */
-.brand-icon {
-    width: 39px;
-    height: 39px;
-    display: grid;
-    place-items: center;
-    border-radius: 9px;
-    /* Creates a green gradient for the logo. */
-    background: linear-gradient( 135deg, #22c55e, #16a34a );
-    color: #041008;
-    font-size: 20px;
-    font-weight: 900;
-    /* Adds a soft green glow around the logo. */
-    box-shadow: 0 0 25px rgba(34, 197, 94, 0.25);
-}
-
 /* Styles the main Smart-X brand name. */
 .brand strong {
     display: block;
@@ -138,42 +121,11 @@ a {
         transition: 0.2s;
     }
 
-        /* Changes a navigation link to white
+        /* Changes a navigation link to blue
    when the user hovers over it. */
         .nav-links a:hover {
-            color: white;
+            color: blue;
         }
-
-/* Styles the Gateway Online indicator
-   displayed in the navigation bar. */
-.nav-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 13px;
-    border: 1px solid rgba(34, 197, 94, 0.25);
-    border-radius: 100px;
-    background: rgba(34, 197, 94, 0.06);
-    color: #75e498;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
-}
-
-/* Creates the small green circle used
-   as an online status indicator. */
-.online-dot {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #22c55e;
-    /* Adds a glowing effect to make
-       the online indicator more visible. */
-    box-shadow: 0 0 9px rgba(34, 197, 94, 0.8);
-}
-
 
 /* ==================================
    HOME
@@ -187,7 +139,8 @@ a {
     min-height: calc(100vh - 72px);
     /* Uses radial gradients to create subtle
        green and blue lighting effects. */
-    background: radial-gradient( circle at 50% 0%, rgba(29, 78, 216, 0.12), transparent 35% ), radial-gradient( circle at 90% 20%, rgba(34, 197, 94, 0.07), transparent 25% );
+    background: radial-gradient( circle at 50% 0%, rgba(29, 78, 216, 0.12), transparent 35% ), 
+        radial-gradient( circle at 90% 20%, rgba(34, 197, 94, 0.07), transparent 25% );
 }
 
 /* Controls the layout of the large introductory
@@ -199,26 +152,10 @@ a {
     text-align: center;
 }
 
-/* Styles the Farming App ONLINE badge. */
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 25px;
-    padding: 8px 14px;
-    border: 1px solid rgba(34, 197, 94, 0.22);
-    border-radius: 100px;
-    background: rgba(34, 197, 94, 0.06);
-    color: #75e498;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.2px;
-}
-
 /* Styles the main Farming App heading. */
 .home-hero h1 {
     margin-bottom: 18px;
-    color: white;
+    color: black;
     /* clamp() allows the heading size to scale
        automatically depending on screen width. */
     font-size: clamp( 42px, 6vw, 70px );
@@ -228,13 +165,13 @@ a {
 
 /* Styles the descriptive paragraph
    underneath the home page heading. */
-.home-hero p {
-    max-width: 650px;
-    margin: auto;
-    color: #8290a5;
-    font-size: 17px;
-    line-height: 1.8;
-}
+    .home-hero p {
+        max-width: 650px;
+        margin: auto;
+        color: #505761;
+        font-size: 17px;
+        line-height: 1.8;
+    }
 
 /* Defines the width and spacing of the
    Smart-X architecture section. */
@@ -256,7 +193,7 @@ a {
 
     /* Styles the architecture section heading. */
     .section-title h2 {
-        color: white;
+        color: black;
         font-size: 29px;
     }
 
@@ -273,7 +210,7 @@ a {
    such as SYSTEM ARCHITECTURE and PART 1. */
 .eyebrow {
     margin-bottom: 7px;
-    color: #3ddc78;
+    color: #133e7d;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 1.4px;
@@ -310,10 +247,10 @@ a {
     overflow: hidden;
 }
 
-/* Gives active module cards a green border
+/* Gives active module cards a border
    and enables animated hover effects. */
 .active-card {
-    border-color: rgba(34, 197, 94, 0.32);
+    border-color: rgba(19, 62, 125, 0.32);
     transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 
@@ -321,7 +258,7 @@ a {
    when the user hovers over it. */
     .active-card:hover {
         transform: translateY(-7px);
-        border-color: rgba(34, 197, 94, 0.8);
+        border-color: blue;
         box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
     }
 
@@ -331,56 +268,10 @@ a {
     opacity: 0.48;
 }
 
-/* Arranges the module icon and status label
-   at opposite ends of the card. */
-.card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Styles the icon displayed
-   on each Smart-X module card. */
-.card-icon {
-    width: 50px;
-    height: 50px;
-    display: grid;
-    place-items: center;
-    border-radius: 12px;
-    background: #182233;
-    font-size: 23px;
-}
-
-/* Provides shared styling for module
-   status labels such as ACTIVE and PART 2. */
-.status-label {
-    padding: 5px 9px;
-    border-radius: 100px;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-/* Styles the status label of an active module. */
-.active-label {
-    border: 1px solid rgba(34, 197, 94, 0.2);
-    background: rgba(34, 197, 94, 0.08);
-    color: #65dc8e;
-}
-
 /* Styles the label used on locked modules. */
 .locked-label {
     border: 1px solid #303a49;
     color: #758196;
-}
-
-/* Styles the number identifying
-   each Smart-X module. */
-.card-number {
-    margin: 30px 0 5px;
-    color: #425069;
-    font-size: 12px;
-    font-weight: 700;
 }
 
 /* Styles the main title
@@ -409,7 +300,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #4ade80;
+    color: #133e7d;
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
@@ -450,7 +341,7 @@ a {
     /* Styles the main telemetry page heading. */
     .telemetry-header h1 {
         margin-bottom: 8px;
-        color: white;
+        color: black;
         font-size: 36px;
         letter-spacing: -1px;
     }
@@ -461,22 +352,6 @@ a {
         color: #718096;
         font-size: 14px;
     }
-
-/* Styles the API CONNECTED indicator. */
-.gateway-health {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 10px 14px;
-    border: 1px solid rgba(34, 197, 94, 0.2);
-    border-radius: 8px;
-    background: rgba(34, 197, 94, 0.05);
-    color: #5ee185;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
 
 /* ==================================
    STATS
@@ -498,7 +373,7 @@ a {
     padding: 21px;
     border: 1px solid #1f2937;
     border-radius: 12px;
-    background: #0d1421;
+    background: #849cbf;
 }
 
     /* Styles the description shown
@@ -506,7 +381,7 @@ a {
     .stat-card span {
         display: block;
         margin-bottom: 11px;
-        color: #68778d;
+        color: black;
         font-size: 10px;
         font-weight: 700;
         text-transform: uppercase;
@@ -555,7 +430,6 @@ a {
     gap: 20px;
 }
 
-
 /* ==================================
    PANELS
    Defines the reusable container design
@@ -568,7 +442,7 @@ a {
     padding: 25px;
     border: 1px solid #1f2937;
     border-radius: 14px;
-    background: linear-gradient( 145deg, #0e1624, #0b111c );
+    background: #849cbf;
 }
 
 /* Arranges panel headings and controls
@@ -619,7 +493,7 @@ a {
 
     /* Styles labels shown above form fields. */
     .form-group label {
-        color: #8794a8;
+        color: white;
         font-size: 11px;
         font-weight: 650;
     }
@@ -639,18 +513,18 @@ a {
         transition: 0.2s;
     }
 
-        /* Highlights a field with a green border
+        /* Highlights a field with a border
    when the user selects or types into it. */
         .form-group input:focus,
         .form-group select:focus {
-            border-color: rgba(34, 197, 94, 0.7);
+            border-color: rgba(19, 62, 125, 0.7);
             box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.07);
         }
 
         /* Styles placeholder text
    displayed inside input fields. */
         .form-group input::placeholder {
-            color: #425069;
+            color: #e6ebf4;
         }
 
 
@@ -670,14 +544,14 @@ a {
     transition: 0.2s;
 }
 
-/* Styles the main green action buttons
+/* Styles the main action buttons
    such as Register Sensor and Send To API. */
 .primary-button {
     min-height: 44px;
     padding: 10px 16px;
     border-radius: 8px;
-    background: #22c55e;
-    color: #041008;
+    background: #3477ed;
+    color: white;
     font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;
@@ -686,7 +560,7 @@ a {
 
     /* Lightens primary buttons when hovered. */
     .primary-button:hover {
-        background: #4ade80;
+        background: blue;
     }
 
 /* Styles less prominent secondary actions
@@ -694,9 +568,8 @@ a {
 .secondary-button {
     min-height: 42px;
     padding: 10px 15px;
-    border: 1px solid #2b374a;
     border-radius: 8px;
-    background: #111b2b;
+    background: #3477ed;
     color: #c6d0de;
     font-size: 11px;
     font-weight: 700;
@@ -705,8 +578,7 @@ a {
     /* Highlights a secondary button
    when the user hovers over it. */
     .secondary-button:hover {
-        border-color: #3d4c63;
-        background: #172235;
+        background: blue;
     }
 
 /* Styles compact icon-only buttons,
@@ -746,17 +618,6 @@ a {
     background: #0a121e;
 }
 
-/* Creates the green indicator showing
-   that a registered sensor is online. */
-.sensor-status-dot {
-    width: 8px;
-    height: 8px;
-    flex: 0 0 auto;
-    border-radius: 50%;
-    background: #22c55e;
-    box-shadow: 0 0 8px rgba(34, 197, 94, 0.65);
-}
-
 /* Arranges the textual information
    associated with each sensor. */
 .sensor-info {
@@ -788,16 +649,6 @@ a {
         font-size: 9px;
     }
 
-/* Styles the ONLINE text used
-   for active registered sensors. */
-.sensor-online {
-    color: #4bd879;
-    font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 0.7px;
-}
-
-
 /* ==================================
    TABLE
    Styles the telemetry history table.
@@ -820,7 +671,7 @@ a {
     .telemetry-table th {
         padding: 10px 12px;
         border-bottom: 1px solid #222d3e;
-        color: #59677d;
+        color: white;
         font-size: 9px;
         font-weight: 800;
         text-align: left;
@@ -832,19 +683,9 @@ a {
     .telemetry-table td {
         padding: 12px;
         border-bottom: 1px solid #192334;
-        color: #9aa8ba;
+        color: #59677d;
         font-size: 11px;
     }
-
-/* Styles badges used to indicate
-   the telemetry data type. */
-.type-badge {
-    padding: 4px 7px;
-    border-radius: 5px;
-    background: #182437;
-    color: #9db3d1;
-    font-size: 9px;
-}
 
 /* Shared appearance for empty tables
    and empty sensor/alert lists. */
@@ -855,7 +696,6 @@ a {
     font-size: 11px;
     text-align: center;
 }
-
 
 /* ==================================
    ALERTS
@@ -883,19 +723,19 @@ a {
     padding: 13px;
     /* A coloured left border is used
        to indicate the alert severity. */
-    border-left: 3px solid #64748b;
+    border-left: 8px solid #64748b;
     border-radius: 0 8px 8px 0;
     background: #0a121e;
 }
 
     /* Uses an orange border for warning alerts. */
     .alert-item.warning {
-        border-left-color: #f59e0b;
+        border-left-color: orange;
     }
 
     /* Uses a red border for critical alerts. */
     .alert-item.critical {
-        border-left-color: #ef4444;
+        border-left-color: red;
     }
 
     /* Uses a blue border for informational alerts. */
@@ -931,16 +771,6 @@ a {
         white-space: nowrap;
     }
 
-/* Styles the LIVE indicator
-   displayed above the alert feed. */
-.live-badge {
-    color: #4ade80;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-
 /* ==================================
    MESSAGES
    Styles feedback messages displayed
@@ -957,22 +787,21 @@ a {
     font-size: 11px;
 }
 
-    /* Displays successful operation messages
-   using a green colour scheme. */
+    /* Displays successful operation messages. */
     .message-box.success {
         display: block;
-        border: 1px solid rgba(34, 197, 94, 0.25);
-        background: rgba(34, 197, 94, 0.07);
-        color: #68de90;
+        border: 1px solid white;
+        background: rgb(246, 251, 246, 0,07);
+        color: white;
     }
 
     /* Displays failed operation messages
    using a red colour scheme. */
     .message-box.error {
         display: block;
-        border: 1px solid rgba(239, 68, 68, 0.25);
-        background: rgba(239, 68, 68, 0.07);
-        color: #f98e8e;
+        border: 1px solid rgba(250, 24, 16, 0.25);
+        background: rgb(250, 24, 16, 0,07);
+        color: #fc1616;
     }
 
 /* Displays related action buttons
