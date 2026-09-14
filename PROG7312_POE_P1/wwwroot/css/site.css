@@ -461,7 +461,6 @@ a {
         font-size: 19px;
     }
 
-
 /* ==================================
    FORMS
    Styles registration, telemetry
@@ -513,18 +512,10 @@ a {
         transition: 0.2s;
     }
 
-        /* Highlights a field with a border
-   when the user selects or types into it. */
-        .form-group input:focus,
-        .form-group select:focus {
-            border-color: rgba(19, 62, 125, 0.7);
-            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.07);
-        }
-
         /* Styles placeholder text
    displayed inside input fields. */
         .form-group input::placeholder {
-            color: #e6ebf4;
+            color: dimgray;
         }
 
 
