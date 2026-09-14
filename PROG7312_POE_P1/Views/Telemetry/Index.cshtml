@@ -1,0 +1,693 @@
+﻿@{
+    ViewData["Title"] = "Telemetry Gateway";
+}
+
+
+<div class="telemetry-page">
+
+
+    <!-- HEADER -->
+
+    <section class="telemetry-header">
+
+
+        <div>
+
+            <p class="eyebrow">
+                PART 1
+            </p>
+
+
+            <h1>
+                Sensor Data Ingestion
+                & Telemetry
+            </h1>
+
+
+            <p>
+                Register devices, submit strongly
+                typed telemetry and monitor the
+                Smart-X gateway.
+            </p>
+
+        </div>
+
+
+        <div class="gateway-health">
+
+            <span class="online-dot"></span>
+
+            API CONNECTED
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SUMMARY CARDS -->
+
+    <section class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <span>
+                Registered Sensors
+            </span>
+
+            <strong id="sensorCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Float Packets
+            </span>
+
+            <strong id="floatCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Integer Packets
+            </span>
+
+            <strong id="integerCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Boolean Packets
+            </span>
+
+            <strong id="booleanCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Combined Power
+            </span>
+
+            <strong>
+                <span id="powerLoad">
+                    0
+                </span>
+                W
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <div class="dashboard-layout">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="dashboard-column">
+
+
+            <!-- REGISTER SENSOR -->
+
+            <section class="panel">
+
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            DEVICE MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Register Sensor
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="sensorForm"
+                      class="smart-form">
+
+
+                    <div class="form-group">
+
+                        <label for="deviceId">
+
+                            MAC Address /
+                            Unique Identifier
+
+                        </label>
+
+
+                        <input id="deviceId"
+                               type="text"
+                               placeholder="AA:BB:CC:DD:EE:01"
+                               required />
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="location">
+
+                            Deployment Location
+
+                        </label>
+
+
+                        <input id="location"
+                               type="text"
+                               placeholder="Facility A - Zone 1"
+                               required />
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="category">
+
+                            Sensor Category
+
+                        </label>
+
+
+                        <select id="category"
+                                required>
+
+                            <option value="Environmental">
+                                Environmental
+                            </option>
+
+                            <option value="PowerConsumption">
+                                Power Consumption
+                            </option>
+
+                            <option value="Actuator">
+                                Actuator
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="primary-button">
+
+                        Register Sensor
+
+                    </button>
+
+                </form>
+
+
+                <div id="registrationMessage"
+                     class="message-box">
+                </div>
+
+            </section>
+
+
+
+            <!-- SEND TELEMETRY -->
+
+            <section class="panel">
+
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            API INGESTION
+                        </p>
+
+                        <h2>
+                            Submit Telemetry
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="telemetryForm"
+                      class="smart-form">
+
+
+                    <div class="form-group">
+
+                        <label for="telemetrySensor">
+
+                            Sensor
+
+                        </label>
+
+
+                        <select id="telemetrySensor"
+                                required>
+
+                            <option value="">
+                                Register a sensor first
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="telemetryType">
+
+                                Data Type
+
+                            </label>
+
+
+                            <select id="telemetryType">
+
+                                <option value="float">
+                                    Float
+                                </option>
+
+                                <option value="int">
+                                    Integer
+                                </option>
+
+                                <option value="bool">
+                                    Boolean
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="telemetryValue">
+
+                                Value
+
+                            </label>
+
+
+                            <input id="telemetryValue"
+                                   type="text"
+                                   placeholder="24.5"
+                                   required />
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="telemetryUnit">
+
+                            Unit
+
+                        </label>
+
+
+                        <input id="telemetryUnit"
+                               type="text"
+                               placeholder="°C, W, ON/OFF" />
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="primary-button">
+
+                        Send To API
+
+                    </button>
+
+                </form>
+
+
+                <div id="telemetryMessage"
+                     class="message-box">
+                </div>
+
+            </section>
+
+
+
+            <!-- FILE UPLOAD -->
+
+            <section class="panel">
+
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            SENSOR MEDIA
+                        </p>
+
+                        <h2>
+                            Attach Device File
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="fileForm"
+                      class="smart-form">
+
+
+                    <div class="form-group">
+
+                        <label for="fileSensor">
+
+                            Sensor Profile
+
+                        </label>
+
+
+                        <select id="fileSensor"
+                                required>
+
+                            <option value="">
+                                Select sensor
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="deviceFile">
+
+                            Configuration,
+                            photo or log file
+
+                        </label>
+
+
+                        <input id="deviceFile"
+                               type="file"
+                               required />
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="secondary-button">
+
+                        Upload File
+
+                    </button>
+
+                </form>
+
+
+                <div id="fileMessage"
+                     class="message-box">
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="dashboard-column">
+
+
+            <!-- REGISTERED SENSORS -->
+
+            <section class="panel">
+
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            LIVE INVENTORY
+                        </p>
+
+                        <h2>
+                            Registered Sensors
+                        </h2>
+
+                    </div>
+
+
+                    <button id="refreshSensors"
+                            class="icon-button">
+
+                        ↻
+
+                    </button>
+
+                </div>
+
+
+                <div id="sensorList"
+                     class="sensor-list">
+
+                    <div class="empty-state">
+
+                        No sensors registered yet.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TELEMETRY HISTORY -->
+
+            <section class="panel">
+
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PACKET HISTORY
+                        </p>
+
+                        <h2>
+                            Latest Telemetry
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <select id="historySensor">
+
+                        <option value="">
+                            Select sensor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="telemetry-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Type
+                                </th>
+
+                                <th>
+                                    Value
+                                </th>
+
+                                <th>
+                                    Unit
+                                </th>
+
+                                <th>
+                                    Timestamp
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="telemetryTable">
+
+                            <tr>
+
+                                <td colspan="4"
+                                    class="table-empty">
+
+                                    Select a sensor.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SIMULATION / RECURSION -->
+
+            <section class="panel">
+
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            ADVANCED C#
+                        </p>
+
+                        <h2>
+                            Gateway Tests
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="action-grid">
+
+
+                    <button id="simulateBatchButton"
+                            class="secondary-button">
+
+                        Simulate Raw Batch
+
+                    </button>
+
+
+                    <button id="validateTreeButton"
+                            class="secondary-button">
+
+                        Validate Deployment Tree
+
+                    </button>
+
+                </div>
+
+
+                <div id="advancedMessage"
+                     class="message-box">
+                </div>
+
+            </section>
+
+
+
+            <!-- ALERT FEED -->
+
+            <section class="panel alert-panel">
+
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            DYNAMIC ENGAGEMENT
+                        </p>
+
+                        <h2>
+                            Live Gateway Alerts
+                        </h2>
+
+                    </div>
+
+
+                    <span class="live-badge">
+
+                        LIVE
+
+                    </span>
+
+                </div>
+
+
+                <div id="alertFeed"
+                     class="alert-feed">
+
+                    <div class="empty-state">
+
+                        No alerts detected.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </div>
+
+</div>
