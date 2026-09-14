@@ -242,10 +242,6 @@ function renderSensorList() {
 
                     </div>
 
-                    <span class="sensor-online">
-                        ONLINE
-                    </span>
-
                 </div>
             `;
 

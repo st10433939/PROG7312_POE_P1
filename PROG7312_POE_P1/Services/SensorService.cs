@@ -123,7 +123,7 @@ namespace PROG7312_POE_P1.Services
             _floatTelemetry.Add(packet);
 
 
-            if (packet.Value > 35)
+            if (packet.Value > 7)
             {
                 AddAlertInternal(
                     sensor,
