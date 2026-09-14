@@ -3,7 +3,7 @@
     public enum SensorCategory
     {
         Environmental,
-        PowerConsumption,
+        WaterSolution,
         Actuator
     }
 }

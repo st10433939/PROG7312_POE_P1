@@ -413,7 +413,7 @@ namespace PROG7312_POE_P1.Services
                     .Where(
                         sensor =>
                             sensor.Category ==
-                            SensorCategory.PowerConsumption)
+                            SensorCategory.WaterSolution)
                     .Select(
                         sensor => sensor.DeviceId)
                     .ToHashSet(
