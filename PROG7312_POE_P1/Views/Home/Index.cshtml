@@ -1,0 +1,282 @@
+﻿@{
+    // Sets the title for this page.
+    // This value can be accessed by the shared layout using ViewData["Title"].
+    ViewData["Title"] = "Farming App";
+}
+
+
+<!-- Main container for the Farming App home page. -->
+<div class="home-page">
+
+
+    <!-- Hero section that introduces the application
+         and displays its current online status. -->
+    <section class="home-hero">
+
+        <!-- Displays the application's online status. -->
+        <div class="hero-badge">
+
+            <!-- Visual indicator showing that the application is online. -->
+            <span class="online-dot"></span>
+
+            Farming App ONLINE
+
+        </div>
+
+
+        <!-- Main heading of the home page. -->
+        <h1>
+            Farming App
+        </h1>
+
+
+        <!-- Brief description explaining the purpose
+             of the Farming App telemetry system. -->
+        <p>
+            A centralised telemetry gateway for
+            monitoring and managing distributed
+            IoT sensor networks.
+        </p>
+
+    </section>
+
+
+
+    <!-- Contains the different modules that form part
+         of the Farming App system architecture. -->
+    <section class="architecture-container">
+
+
+        <!-- Displays the heading and description
+             for the system architecture section. -->
+        <div class="section-title">
+
+            <div>
+
+                <!-- Small heading used to identify
+                     the system architecture section. -->
+                <p class="eyebrow">
+                    SYSTEM ARCHITECTURE
+                </p>
+
+
+                <!-- Prompts the user to select one
+                     of the available Smart-X modules. -->
+                <h2>
+                    Choose a Smart-X Module
+                </h2>
+
+            </div>
+
+
+            <!-- Explains which modules are currently available
+                 and which will be implemented later in the POE. -->
+            <p>
+                Part 1 activates sensor ingestion.
+                Future modules remain locked until
+                later stages of the POE.
+            </p>
+
+        </div>
+
+
+
+        <!-- Grid container used to display the
+             different Smart-X module cards. -->
+        <div class="pillar-grid">
+
+
+            <!-- PART 1: SENSOR DATA INGESTION MODULE -->
+            <!-- Creates a clickable card for the currently active module.
+                 ASP.NET Core Tag Helpers navigate the user to the Index
+                 action of the TelemetryController. -->
+            <a asp-controller="Telemetry"
+               asp-action="Index"
+               class="pillar-card active-card">
+
+
+                <!-- Top section of the card containing
+                     the module icon and its status. -->
+                <div class="card-top">
+
+                    <!-- Icon representing sensor communication/telemetry. -->
+                    <div class="card-icon">
+                        📡
+                    </div>
+
+
+                    <!-- Indicates that this module is currently available. -->
+                    <span class="status-label active-label">
+                        ACTIVE
+                    </span>
+
+                </div>
+
+
+                <!-- Displays the module number. -->
+                <p class="card-number">
+                    01
+                </p>
+
+
+                <!-- Displays the name of the first module. -->
+                <h3>
+                    Sensor Data Ingestion
+                    & Telemetry
+                </h3>
+
+
+                <!-- Describes the functionality provided
+                     by the telemetry module. -->
+                <p class="card-description">
+
+                    Register IoT devices,
+                    ingest strongly typed telemetry,
+                    upload hardware files and monitor
+                    live sensor events.
+
+                </p>
+
+
+                <!-- Provides a visual call-to-action showing
+                     that the user can open this module. -->
+                <div class="card-action">
+
+                    Launch Gateway
+
+                    <!-- Arrow indicating navigation to another page. -->
+                    <span>
+                        →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- PART 2: REAL-TIME COMMAND MODULE -->
+            <!-- Displays the second Smart-X module.
+                 This module is currently locked and is therefore
+                 displayed as a div instead of a clickable link. -->
+            <div class="pillar-card locked-card">
+
+
+                <!-- Top section containing the module icon and status. -->
+                <div class="card-top">
+
+                    <!-- Icon representing real-time commands and processing. -->
+                    <div class="card-icon">
+                        ⚡
+                    </div>
+
+
+                    <!-- Indicates that this functionality
+                         will be introduced in Part 2. -->
+                    <span class="status-label locked-label">
+                        PART 2
+                    </span>
+
+                </div>
+
+
+                <!-- Displays the module number. -->
+                <p class="card-number">
+                    02
+                </p>
+
+
+                <!-- Displays the name of the second module. -->
+                <h3>
+                    Real-Time Command
+                    Stream & History
+                </h3>
+
+
+                <!-- Describes the functionality that will
+                     eventually be provided by this module. -->
+                <p class="card-description">
+
+                    Process real-time command
+                    queues, issue device instructions
+                    and manage command history.
+
+                </p>
+
+
+                <!-- Indicates that the module cannot
+                     currently be accessed by the user. -->
+                <div class="card-action disabled-action">
+
+                    Module Locked
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FINAL POE: NETWORK TOPOLOGY MODULE -->
+            <!-- Displays the final Smart-X module.
+                 This module remains locked until the final POE stage. -->
+            <div class="pillar-card locked-card">
+
+
+                <!-- Top section containing the module icon and status. -->
+                <div class="card-top">
+
+                    <!-- Icon representing networking and connectivity. -->
+                    <div class="card-icon">
+                        🌐
+                    </div>
+
+
+                    <!-- Indicates that this module forms
+                         part of the Final POE implementation. -->
+                    <span class="status-label locked-label">
+                        FINAL POE
+                    </span>
+
+                </div>
+
+
+                <!-- Displays the module number. -->
+                <p class="card-number">
+                    03
+                </p>
+
+
+                <!-- Displays the name of the final module. -->
+                <h3>
+                    Network Topology
+                    & Mesh Routing
+                </h3>
+
+
+                <!-- Describes the planned network visualisation
+                     and telemetry routing functionality. -->
+                <p class="card-description">
+
+                    Visualise the Smart-X mesh
+                    network and calculate efficient
+                    telemetry routing paths.
+
+                </p>
+
+
+                <!-- Indicates that the module cannot
+                     currently be accessed by the user. -->
+                <div class="card-action disabled-action">
+
+                    Module Locked
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</div>

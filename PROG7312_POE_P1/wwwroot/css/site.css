@@ -1,0 +1,1087 @@
+/* ==================================
+   GLOBAL
+   Contains general styling rules that
+   apply throughout the entire website.
+================================== */
+
+/* Resets the default margin and padding on all elements
+   and ensures padding/borders are included in element dimensions. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensures the HTML document can fill the full height
+   of the browser window. */
+html {
+    min-height: 100%;
+}
+
+/* Defines the main visual appearance of the application,
+   including the dark background, text colour and font family. */
+body {
+    min-height: 100vh;
+    background: #070b14;
+    color: #e8edf6;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* Ensures form controls use the same font
+   as the rest of the application. */
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* Allows links to inherit the colour
+   of their surrounding element. */
+a {
+    color: inherit;
+}
+
+
+/* ==================================
+   NAVIGATION
+   Controls the appearance and layout
+   of the application's navigation bar.
+================================== */
+
+/* Creates a navigation header that remains
+   visible at the top of the page while scrolling. */
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1c2535;
+    background: rgba(8, 13, 24, 0.96);
+    /* Adds a blurred glass-style effect
+       behind the navigation bar. */
+    backdrop-filter: blur(15px);
+}
+
+/* Defines the size and horizontal layout
+   of the main navigation bar. */
+.smart-nav {
+    width: min( 1400px, calc(100% - 40px) );
+    height: 72px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+/* Styles the Smart-X brand link and keeps
+   the logo and application name aligned. */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    /* Pushes the remaining navigation content
+       towards the right side of the header. */
+    margin-right: auto;
+}
+
+/* Styles the square Smart-X icon
+   shown alongside the application name. */
+.brand-icon {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    /* Creates a green gradient for the logo. */
+    background: linear-gradient( 135deg, #22c55e, #16a34a );
+    color: #041008;
+    font-size: 20px;
+    font-weight: 900;
+    /* Adds a soft green glow around the logo. */
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.25);
+}
+
+/* Styles the main Smart-X brand name. */
+.brand strong {
+    display: block;
+    color: white;
+    font-size: 16px;
+}
+
+/* Styles the smaller subtitle displayed
+   underneath the Smart-X brand name. */
+.brand small {
+    display: block;
+    margin-top: -2px;
+    color: #66758c;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Arranges the navigation links horizontally. */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+    /* Defines the appearance of individual
+   navigation links. */
+    .nav-links a {
+        text-decoration: none;
+        color: #94a3b8;
+        font-size: 13px;
+        /* Creates a smooth colour change
+       when hovering over the link. */
+        transition: 0.2s;
+    }
+
+        /* Changes a navigation link to white
+   when the user hovers over it. */
+        .nav-links a:hover {
+            color: white;
+        }
+
+/* Styles the Gateway Online indicator
+   displayed in the navigation bar. */
+.nav-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 13px;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    border-radius: 100px;
+    background: rgba(34, 197, 94, 0.06);
+    color: #75e498;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+/* Creates the small green circle used
+   as an online status indicator. */
+.online-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    /* Adds a glowing effect to make
+       the online indicator more visible. */
+    box-shadow: 0 0 9px rgba(34, 197, 94, 0.8);
+}
+
+
+/* ==================================
+   HOME
+   Controls the main Farming App
+   landing page appearance.
+================================== */
+
+/* Defines the background and minimum height
+   of the application home page. */
+.home-page {
+    min-height: calc(100vh - 72px);
+    /* Uses radial gradients to create subtle
+       green and blue lighting effects. */
+    background: radial-gradient( circle at 50% 0%, rgba(29, 78, 216, 0.12), transparent 35% ), radial-gradient( circle at 90% 20%, rgba(34, 197, 94, 0.07), transparent 25% );
+}
+
+/* Controls the layout of the large introductory
+   section at the top of the home page. */
+.home-hero {
+    width: min( 900px, calc(100% - 40px) );
+    margin: auto;
+    padding: 105px 0 80px;
+    text-align: center;
+}
+
+/* Styles the Farming App ONLINE badge. */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding: 8px 14px;
+    border: 1px solid rgba(34, 197, 94, 0.22);
+    border-radius: 100px;
+    background: rgba(34, 197, 94, 0.06);
+    color: #75e498;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+/* Styles the main Farming App heading. */
+.home-hero h1 {
+    margin-bottom: 18px;
+    color: white;
+    /* clamp() allows the heading size to scale
+       automatically depending on screen width. */
+    font-size: clamp( 42px, 6vw, 70px );
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+/* Styles the descriptive paragraph
+   underneath the home page heading. */
+.home-hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #8290a5;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Defines the width and spacing of the
+   Smart-X architecture section. */
+.architecture-container {
+    width: min( 1250px, calc(100% - 40px) );
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+/* Arranges the architecture heading and
+   its description side-by-side. */
+.section-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+    /* Styles the architecture section heading. */
+    .section-title h2 {
+        color: white;
+        font-size: 29px;
+    }
+
+    /* Styles the descriptive paragraph
+   shown beside the architecture heading. */
+    .section-title > p {
+        max-width: 440px;
+        color: #68778d;
+        font-size: 13px;
+        text-align: right;
+    }
+
+/* Styles small uppercase section labels
+   such as SYSTEM ARCHITECTURE and PART 1. */
+.eyebrow {
+    margin-bottom: 7px;
+    color: #3ddc78;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+
+/* ==================================
+   HOME PILLARS
+   Styles the cards used to represent
+   the different Smart-X modules.
+================================== */
+
+/* Creates a three-column grid for the
+   Smart-X module cards. */
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Provides the base visual design
+   for every Smart-X module card. */
+.pillar-card {
+    min-height: 370px;
+    padding: 28px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #202a3b;
+    border-radius: 17px;
+    background: linear-gradient( 145deg, #111827, #0c1320 );
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/* Gives active module cards a green border
+   and enables animated hover effects. */
+.active-card {
+    border-color: rgba(34, 197, 94, 0.32);
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+    /* Lifts and highlights an active card
+   when the user hovers over it. */
+    .active-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(34, 197, 94, 0.8);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+/* Makes locked modules appear faded
+   to indicate that they are unavailable. */
+.locked-card {
+    opacity: 0.48;
+}
+
+/* Arranges the module icon and status label
+   at opposite ends of the card. */
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Styles the icon displayed
+   on each Smart-X module card. */
+.card-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #182233;
+    font-size: 23px;
+}
+
+/* Provides shared styling for module
+   status labels such as ACTIVE and PART 2. */
+.status-label {
+    padding: 5px 9px;
+    border-radius: 100px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Styles the status label of an active module. */
+.active-label {
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    background: rgba(34, 197, 94, 0.08);
+    color: #65dc8e;
+}
+
+/* Styles the label used on locked modules. */
+.locked-label {
+    border: 1px solid #303a49;
+    color: #758196;
+}
+
+/* Styles the number identifying
+   each Smart-X module. */
+.card-number {
+    margin: 30px 0 5px;
+    color: #425069;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Styles the main title
+   inside each module card. */
+.pillar-card h3 {
+    max-width: 290px;
+    color: #f5f7fb;
+    font-size: 22px;
+    line-height: 1.35;
+}
+
+/* Styles the explanatory text
+   inside each module card. */
+.card-description {
+    margin-top: 16px;
+    color: #78869a;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* Styles the action text shown
+   at the bottom of each module card. */
+.card-action {
+    margin-top: auto;
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #4ade80;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+/* Changes the action text colour
+   for unavailable modules. */
+.disabled-action {
+    color: #5d687a;
+}
+
+
+/* ==================================
+   TELEMETRY PAGE
+   Controls the primary layout and
+   heading of the telemetry dashboard.
+================================== */
+
+/* Defines the width and spacing
+   of the Telemetry Gateway page. */
+.telemetry-page {
+    width: min( 1400px, calc(100% - 40px) );
+    margin: auto;
+    padding: 55px 0 100px;
+}
+
+/* Arranges the telemetry heading
+   and API status horizontally. */
+.telemetry-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+    /* Styles the main telemetry page heading. */
+    .telemetry-header h1 {
+        margin-bottom: 8px;
+        color: white;
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    /* Styles the main descriptive paragraph in the
+   telemetry header while excluding eyebrow text. */
+    .telemetry-header > div > p:not(.eyebrow) {
+        color: #718096;
+        font-size: 14px;
+    }
+
+/* Styles the API CONNECTED indicator. */
+.gateway-health {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 8px;
+    background: rgba(34, 197, 94, 0.05);
+    color: #5ee185;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+/* ==================================
+   STATS
+   Styles the summary cards showing
+   live telemetry statistics.
+================================== */
+
+/* Displays the telemetry statistics
+   in a five-column grid. */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 13px;
+    margin-bottom: 22px;
+}
+
+/* Styles each individual statistics card. */
+.stat-card {
+    padding: 21px;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    background: #0d1421;
+}
+
+    /* Styles the description shown
+   above each statistic value. */
+    .stat-card span {
+        display: block;
+        margin-bottom: 11px;
+        color: #68778d;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+    }
+
+    /* Styles the numerical value
+   shown on each statistics card. */
+    .stat-card strong {
+        color: white;
+        font-size: 27px;
+        font-weight: 650;
+    }
+
+        /* Prevents nested spans such as the power value
+   from inheriting the label styling above. */
+        .stat-card strong span {
+            display: inline;
+            color: inherit;
+            font-size: inherit;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+
+/* ==================================
+   DASHBOARD LAYOUT
+   Defines the two-column structure of
+   the main telemetry dashboard.
+================================== */
+
+/* Creates a two-column dashboard.
+   The right column is slightly wider than the left. */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 20px;
+}
+
+/* Arranges panels vertically inside
+   each dashboard column. */
+.dashboard-column {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ==================================
+   PANELS
+   Defines the reusable container design
+   used throughout the telemetry dashboard.
+================================== */
+
+/* Provides the common appearance
+   for each dashboard panel. */
+.panel {
+    padding: 25px;
+    border: 1px solid #1f2937;
+    border-radius: 14px;
+    background: linear-gradient( 145deg, #0e1624, #0b111c );
+}
+
+/* Arranges panel headings and controls
+   such as refresh buttons horizontally. */
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+    /* Styles the main title inside a panel. */
+    .panel-heading h2 {
+        color: white;
+        font-size: 19px;
+    }
+
+
+/* ==================================
+   FORMS
+   Styles registration, telemetry
+   and file-upload forms.
+================================== */
+
+/* Arranges form controls vertically
+   with consistent spacing. */
+.smart-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Allows two related form controls
+   to be shown alongside each other. */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+/* Arranges each label and input vertically. */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+    /* Styles labels shown above form fields. */
+    .form-group label {
+        color: #8794a8;
+        font-size: 11px;
+        font-weight: 650;
+    }
+
+    /* Provides shared styling for text fields
+   and dropdown menus. */
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        min-height: 43px;
+        padding: 10px 12px;
+        border: 1px solid #263247;
+        border-radius: 8px;
+        outline: none;
+        background: #09111c;
+        color: #e6ebf4;
+        transition: 0.2s;
+    }
+
+        /* Highlights a field with a green border
+   when the user selects or types into it. */
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: rgba(34, 197, 94, 0.7);
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.07);
+        }
+
+        /* Styles placeholder text
+   displayed inside input fields. */
+        .form-group input::placeholder {
+            color: #425069;
+        }
+
+
+/* ==================================
+   BUTTONS
+   Contains reusable styles for
+   application buttons.
+================================== */
+
+/* Shared button behaviour applied to
+   primary, secondary and icon buttons. */
+.primary-button,
+.secondary-button,
+.icon-button {
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Styles the main green action buttons
+   such as Register Sensor and Send To API. */
+.primary-button {
+    min-height: 44px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #22c55e;
+    color: #041008;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+    /* Lightens primary buttons when hovered. */
+    .primary-button:hover {
+        background: #4ade80;
+    }
+
+/* Styles less prominent secondary actions
+   such as Upload File and Gateway Tests. */
+.secondary-button {
+    min-height: 42px;
+    padding: 10px 15px;
+    border: 1px solid #2b374a;
+    border-radius: 8px;
+    background: #111b2b;
+    color: #c6d0de;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+    /* Highlights a secondary button
+   when the user hovers over it. */
+    .secondary-button:hover {
+        border-color: #3d4c63;
+        background: #172235;
+    }
+
+/* Styles compact icon-only buttons,
+   such as the sensor refresh button. */
+.icon-button {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #283449;
+    border-radius: 8px;
+    background: #111a29;
+    color: #95a3b7;
+    font-size: 17px;
+}
+
+
+/* ==================================
+   SENSORS
+   Styles the list of registered
+   IoT sensors.
+================================== */
+
+/* Arranges registered sensor entries vertically. */
+.sensor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+/* Styles an individual registered sensor entry. */
+.sensor-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    border: 1px solid #202b3d;
+    border-radius: 9px;
+    background: #0a121e;
+}
+
+/* Creates the green indicator showing
+   that a registered sensor is online. */
+.sensor-status-dot {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.65);
+}
+
+/* Arranges the textual information
+   associated with each sensor. */
+.sensor-info {
+    min-width: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+    /* Styles the primary sensor identifier. */
+    .sensor-info strong {
+        color: #e9edf5;
+        font-size: 12px;
+    }
+
+    /* Styles secondary sensor information
+   such as location or category. */
+    .sensor-info span {
+        margin-top: 2px;
+        color: #77869b;
+        font-size: 11px;
+    }
+
+    /* Styles additional sensor information
+   displayed using smaller text. */
+    .sensor-info small {
+        margin-top: 3px;
+        color: #4d5a70;
+        font-size: 9px;
+    }
+
+/* Styles the ONLINE text used
+   for active registered sensors. */
+.sensor-online {
+    color: #4bd879;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+}
+
+
+/* ==================================
+   TABLE
+   Styles the telemetry history table.
+================================== */
+
+/* Allows the telemetry table to scroll horizontally
+   when displayed on smaller screens. */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* Ensures the telemetry table occupies
+   the full available panel width. */
+.telemetry-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    /* Styles the table's column headings. */
+    .telemetry-table th {
+        padding: 10px 12px;
+        border-bottom: 1px solid #222d3e;
+        color: #59677d;
+        font-size: 9px;
+        font-weight: 800;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+    }
+
+    /* Styles the telemetry data rows. */
+    .telemetry-table td {
+        padding: 12px;
+        border-bottom: 1px solid #192334;
+        color: #9aa8ba;
+        font-size: 11px;
+    }
+
+/* Styles badges used to indicate
+   the telemetry data type. */
+.type-badge {
+    padding: 4px 7px;
+    border-radius: 5px;
+    background: #182437;
+    color: #9db3d1;
+    font-size: 9px;
+}
+
+/* Shared appearance for empty tables
+   and empty sensor/alert lists. */
+.table-empty,
+.empty-state {
+    padding: 28px;
+    color: #526076;
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* ==================================
+   ALERTS
+   Styles dynamic alerts generated
+   by the Smart-X gateway.
+================================== */
+
+/* Arranges alerts vertically and adds scrolling
+   when the list becomes too long. */
+.alert-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    max-height: 340px;
+    overflow-y: auto;
+}
+
+/* Provides the default appearance
+   for each gateway alert. */
+.alert-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 13px;
+    /* A coloured left border is used
+       to indicate the alert severity. */
+    border-left: 3px solid #64748b;
+    border-radius: 0 8px 8px 0;
+    background: #0a121e;
+}
+
+    /* Uses an orange border for warning alerts. */
+    .alert-item.warning {
+        border-left-color: #f59e0b;
+    }
+
+    /* Uses a red border for critical alerts. */
+    .alert-item.critical {
+        border-left-color: #ef4444;
+    }
+
+    /* Uses a blue border for informational alerts. */
+    .alert-item.info {
+        border-left-color: #38bdf8;
+    }
+
+    /* Styles the alert category or heading. */
+    .alert-item strong {
+        color: white;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    /* Styles the main alert message. */
+    .alert-item p {
+        margin-top: 3px;
+        color: #8b99ad;
+        font-size: 11px;
+    }
+
+    /* Styles additional alert information. */
+    .alert-item small {
+        color: #536176;
+        font-size: 9px;
+    }
+
+    /* Styles the timestamp associated
+   with each gateway alert. */
+    .alert-item time {
+        color: #536176;
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+/* Styles the LIVE indicator
+   displayed above the alert feed. */
+.live-badge {
+    color: #4ade80;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+/* ==================================
+   MESSAGES
+   Styles feedback messages displayed
+   after user actions.
+================================== */
+
+/* Message containers are hidden by default
+   until JavaScript assigns a status class. */
+.message-box {
+    display: none;
+    margin-top: 14px;
+    padding: 10px 12px;
+    border-radius: 7px;
+    font-size: 11px;
+}
+
+    /* Displays successful operation messages
+   using a green colour scheme. */
+    .message-box.success {
+        display: block;
+        border: 1px solid rgba(34, 197, 94, 0.25);
+        background: rgba(34, 197, 94, 0.07);
+        color: #68de90;
+    }
+
+    /* Displays failed operation messages
+   using a red colour scheme. */
+    .message-box.error {
+        display: block;
+        border: 1px solid rgba(239, 68, 68, 0.25);
+        background: rgba(239, 68, 68, 0.07);
+        color: #f98e8e;
+    }
+
+/* Displays related action buttons
+   next to one another. */
+.action-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Utility class used to emphasise
+   dangerous or critical information in red. */
+.danger-text {
+    color: #ef4444 !important;
+}
+
+
+/* ==================================
+   RESPONSIVE DESIGN
+   Changes the layout at different
+   screen sizes for mobile/tablet support.
+================================== */
+
+
+/* Applied when the screen width is 1050px or smaller. */
+@media (max-width: 1050px) {
+
+    /* Changes Smart-X module cards
+       from three columns to one column. */
+    .pillar-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Changes statistics cards
+       from five columns to two columns. */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Changes the dashboard layout
+       from two columns to one column. */
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Applied to tablets and smaller screens. */
+@media (max-width: 750px) {
+
+    /* Hides the standard navigation links
+       to save horizontal screen space. */
+    .nav-links {
+        display: none;
+    }
+
+    /* Hides the navigation gateway-status indicator
+       on smaller screens. */
+    .nav-status {
+        display: none;
+    }
+
+    /* Stacks the architecture heading
+       and description vertically. */
+    .section-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+        /* Aligns the architecture description
+       to the left on smaller screens. */
+        .section-title > p {
+            text-align: left;
+        }
+
+    /* Stacks the telemetry heading and API
+       status vertically on smaller screens. */
+    .telemetry-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /* Changes paired form fields
+       into a single-column layout. */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Applied to mobile devices
+   with a width of 550px or smaller. */
+@media (max-width: 550px) {
+
+    /* Displays each statistics card
+       on its own row. */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Displays Gateway Test buttons
+       vertically instead of side-by-side. */
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduces the top spacing of the home page
+       hero section on smaller displays. */
+    .home-hero {
+        padding-top: 70px;
+    }
+}

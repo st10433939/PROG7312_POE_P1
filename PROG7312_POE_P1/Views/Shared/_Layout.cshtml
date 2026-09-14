@@ -1,0 +1,140 @@
+﻿<!-- Declares that this document uses HTML5. -->
+<!DOCTYPE html>
+
+<!-- The root HTML element. The language is set to English. -->
+<html lang="en">
+
+<head>
+
+    <!-- Sets the character encoding to UTF-8, allowing the page
+         to correctly display a wide range of characters. -->
+    <meta charset="utf-8" />
+
+    <!-- Makes the website responsive by matching the page width
+         to the width of the user's device. -->
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0" />
+
+
+    <!-- Sets the title displayed in the browser tab.
+         ViewData["Title"] allows each page to have its own title,
+         while Smart-X remains the application name. -->
+    <title>
+        @ViewData["Title"] - Smart-X
+    </title>
+
+
+    <!-- Links the main CSS stylesheet to the page.
+         asp-append-version adds a version value to help prevent
+         browsers from loading an outdated cached CSS file. -->
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+</head>
+
+
+<body>
+
+    <!-- Contains the main header and navigation bar
+         displayed at the top of the application. -->
+    <header class="main-header">
+
+        <nav class="smart-nav">
+
+
+            <!-- Creates a clickable Smart-X logo/brand.
+                 ASP.NET Core Tag Helpers generate a link to
+                 the Index action inside the HomeController. -->
+            <a asp-controller="Home"
+               asp-action="Index"
+               class="brand">
+
+                <!-- Displays the X icon used by the Smart-X brand. -->
+                <div class="brand-icon">
+                    X
+                </div>
+
+                <!-- Displays the application name and description. -->
+                <div>
+                    <strong>Smart-X</strong>
+
+                    <small>
+                        IoT Gateway
+                    </small>
+                </div>
+
+            </a>
+
+
+            <!-- Contains the main navigation links
+                 used to move between pages. -->
+            <div class="nav-links">
+
+                <!-- Navigates the user to the Dashboard page
+                     using the HomeController's Index action. -->
+                <a asp-controller="Home"
+                   asp-action="Index">
+
+                    Dashboard
+
+                </a>
+
+
+                <!-- Navigates the user to the Telemetry Gateway page
+                     using the TelemetryController's Index action. -->
+                <a asp-controller="Telemetry"
+                   asp-action="Index">
+
+                    Telemetry Gateway
+
+                </a>
+
+            </div>
+
+
+            <!-- Displays the current status of the IoT gateway. -->
+            <div class="nav-status">
+
+                <!-- Visual indicator used to show that
+                     the gateway is currently online. -->
+                <span class="online-dot"></span>
+
+                Gateway Online
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Contains the main content of the current page. -->
+    <main>
+
+        <!-- Razor method that inserts the content of the
+             current View into this shared layout. -->
+        @RenderBody()
+
+    </main>
+
+
+    <!-- Loads the application's main JavaScript file.
+         asp-append-version helps prevent an outdated cached
+         version of the JavaScript file from being used. -->
+    <script src="~/js/site.js"
+            asp-append-version="true">
+    </script>
+
+
+    <!-- Allows individual pages to optionally include their
+         own additional JavaScript in a section called "Scripts".
+         required: false means pages do not have to provide it. -->
+    @await RenderSectionAsync(
+    "Scripts",
+        required: false)
+
+</body>
+
+</html>
