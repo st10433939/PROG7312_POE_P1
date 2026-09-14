@@ -4,7 +4,6 @@
 // Write your JavaScript code.
 let sensors = [];
 
-
 // =====================================
 // START APPLICATION
 // =====================================
@@ -16,7 +15,6 @@ document.addEventListener(
         if (!document.getElementById("sensorForm")) {
             return;
         }
-
 
         setupEvents();
 
